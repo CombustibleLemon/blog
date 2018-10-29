@@ -23,7 +23,7 @@ nav{
 */
 
 body {
-    font-size: 1.25em;
+    /*font-size: 1.25em; */
     font-family: $font-stack;
     color: $color-text-dark;
     font-variant-numeric: oldstyle-nums proportional-nums;
@@ -31,7 +31,7 @@ body {
 }
 
 #site-title  {
-    font-size: 2em;
+    font-size: 2.5em;
     font-family: $font-stack-title;
     font-variant: small-caps;
     text-align: center;
@@ -45,7 +45,7 @@ body {
         color: $color-primary-light;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 450px) {
         font-size: 25px;
     }
 }
@@ -75,12 +75,21 @@ article {
     }
     header{
         font-size: 1.25em;
+        @media (min-width: 371px) and (max-width: 450px) {
+            font-size: .95em;
+        }
+        @media (max-width: 370px) {
+            font-size: .85em;
+        }
         h1 {
             font-weight: 300;
             margin-bottom: .2em;
             a {
                 color: $color-text-dark;
                 text-decoration: none;
+            }
+            a:visited {
+                color: $color-text-dark;
             }
             a:hover {
                 color: $color-primary-light;
@@ -90,11 +99,11 @@ article {
             font-family: $font-stack-headers;
             font-style: italic;
             margin-top: 0;
-            font-size: .75em;
+            font-size: 1.1rem;
         }
     }
     .post-content {
-        text-align: justify;
+        text-align: left;
 
         p {
             line-height: 1.25em;
@@ -117,6 +126,8 @@ article {
         max-width: 100%;
         max-height: 75%;
         margin-bottom: .75em;
+        margin-left: 0em;
+        margin-right: 0em;
         display: block;
 
         figcaption {
@@ -130,27 +141,31 @@ article {
         figure.float-right {
             max-width: 60%;
             float: right;
-            margin-left: 1em;
+            margin-left: 1.5em;
+            margin-right: -0.5em;
         }
         
         figure.float-left {
             max-width: 60%;
             float: left;
-            margin-right: 1em;
+            margin-right: 1.5em;
+            margin-left: -0.5em;
         }
     }
 
-    @media (min-width: 650px) {
+    @media (min-width: 651px) {
         figure.float-right {
             max-width: 50%;
             float: right;
-            margin-left: 1em;
+            margin-left: 1.5em;
+            margin-right: -0.5em;
         }
         
         figure.float-left {
             max-width: 50%;
             float: left;
-            margin-right: 1em;
+            margin-right: 1.5em;
+            margin-left: -0.5em;
         }
     }
 }
@@ -168,12 +183,12 @@ nav {
         list-style-type: none;
 
         li {
-            display: inline;
+            display: inline-block;
             text-align: center;
             padding-left: 1em;
             padding-right: 1em;
         }
-        
+        font-size: 1.25em;
 
         @media (max-width:450px) {
             font-size: 12px;
@@ -181,8 +196,8 @@ nav {
             list-style: unset;
         }
 
-        @media (min-width: 450px) and (max-width: 600px) {
-            font-size: 17px;
+        @media (min-width: 451px) and (max-width: 600px) {
+            font-size: .8em;
         }
     }
 }
@@ -194,6 +209,15 @@ nav {
     margin-right: auto;
     margin-left: auto;
     max-width: 960px;
+
+    @media (min-width: 401px) and (max-width: 500px) {
+        padding-right: 10px;
+        padding-left:10px;
+    }
+    @media (max-width: 400px) {
+        padding-right: 4px;
+        padding-left: 4px;
+    }
 }
 
 ::selection {
@@ -218,4 +242,19 @@ blockquote {
 
 blockquote.retelling {
     font-style: italic;
+}
+
+.pagination {
+    margin-top: 2em;
+    text-align: center;
+    .previous {
+        text-align: left;
+
+    }
+    .page_number {
+        text-align: center;
+    }
+    .next {
+        text-align: right;
+    }
 }

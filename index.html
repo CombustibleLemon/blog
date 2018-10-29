@@ -4,7 +4,7 @@
 
 layout: home
 ---
-{% for post in site.posts %}
+{% for post in paginator.posts %}
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
@@ -40,3 +40,23 @@ layout: home
 </article>
 
 {% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination">
+{% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+        ↜&nbsp;Previous
+    </a>
+    <span class="divider"> • </span>
+{% endif %}
+    <span class="page_number">
+        Page {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+{% if paginator.next_page %}
+    <span class="divider"> • </span>
+    <a href="{{ paginator.next_page_path }}"
+    class="next">
+        Next&nbsp;↝
+    </a>
+{% endif %}
+</div>
