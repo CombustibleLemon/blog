@@ -12,6 +12,7 @@ layout: default
             class="dt-published"
             pubdate
             datetime="{{ page.date | date_to_xmlschema }}"
+            title="{{ page.date | date_to_rfc822 }}"
             itemprop="datePublished">
                 {{ page.date | date_to_long_string }}
             </time>
