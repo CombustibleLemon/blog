@@ -24,8 +24,10 @@ layout: home
     </header>
 
     <!-- Read beginning of content -->
-    <div class="post-content e-content" itemprop="articleBody">
-        {{ post.content | truncate: 400, '...' }}
+    <div
+    class="post-content e-content paginator-content"
+    itemprop="articleBody">
+        {{ post.content | truncate: 400, '…' }}
     </div>
 
     <footer>

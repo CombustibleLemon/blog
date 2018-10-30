@@ -129,11 +129,13 @@ article {
         margin-left: 0em;
         margin-right: 0em;
         display: block;
+        text-align: center;
 
         figcaption {
             font-style: italic;
             text-align: center;
             font-family: $font-stack-headers;
+            font-size: 1.25em;
         }
     }
 
@@ -238,6 +240,11 @@ blockquote {
     padding-right: .25em;
     padding-left: .5em;
     background-color: #f9f9f9;
+    
+    @media (max-width:450px) {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
 }
 
 blockquote.retelling {
@@ -256,5 +263,12 @@ blockquote.retelling {
     }
     .next {
         text-align: right;
+    }
+}
+
+.paginator-content {
+    figure {
+        display: none;
+        visibility: hidden;
     }
 }
