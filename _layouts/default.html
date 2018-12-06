@@ -10,9 +10,9 @@
 
     <link rel="icon"
         type="image/vnd.microsoft.icon"
-        href="/assets/img/vomiting-emoji.ico" />
+        href="{{ site.url }}/assets/img/vomiting-emoji.ico" />
     <link rel="stylesheet" type="text/css"
-    href="{{ site.baseurl }}/assets/css/styles.css" />
+    href="{{ site.url }}{{ site.baseurl }}/assets/css/styles.css" />
 
     <!-- Open Graph -->
 
@@ -30,7 +30,7 @@
     <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="{{ site.title }}" />
-    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:url" content="{{ page.url | prepend:site.baseurl | prepend:site.url }}" />
 
     {%- assign image_protocol = page.header_image | slice: 0, 4 -%}
     {%- if image_protocol == "http" -%}
@@ -38,7 +38,7 @@
     <meta property="og:image" content="{{ page.header_image }}" />
     {%- elsif image_protocol != nil and image_protocol != "" -%}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:image" content="{{ site.baseurl }}/assets/img/{{ page.header_image }}" />
+    <meta property="og:image" content="{{ site.baseurl | prepend:site.url }}/assets/img/{{ page.header_image }}" />
     {%- else -%}
     <meta name="twitter:card" content="summary" />
     {%- endif -%}

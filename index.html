@@ -34,7 +34,7 @@ itemtype="http://schema.org/BlogPosting">
     </div>
 
     <footer>
-        <a href="{{ post.url | prepend:site.baseurl }}"
+        <a href="{{ post.url | prepend:site.baseurl | prepend:site.url }}"
         aria-label="Link to article" class="readmore">
             Read more&hellip;
         </a>
@@ -42,7 +42,7 @@ itemtype="http://schema.org/BlogPosting">
     
     <!-- idk what this is -->
     <a class="u-url"
-    href="{{ post.url | prepend:site.baseurl }}"
+    href="{{ post.url | prepend:site.baseurl | prepend:site.url }}"
     hidden></a>
 </article>
 
