@@ -5,7 +5,10 @@ $font-stack-sans: sans-serif;
 
 :root{
   --color-bg-light: #ffffff;
-  --color-bg-dark: #212529;
+  --color-bg-dark: #1c1c1c;
+
+  --color-blockquote-bg-light: #f9f9f9;
+  --color-blockquote-bg-dark: #282828;
 
   --color-primary-main: #F44336;
   --color-primary-light: #ff7961;
@@ -22,11 +25,13 @@ $font-stack-sans: sans-serif;
 
   // light mode
   --color-bg: var(--color-bg-light);
+  --color-blockquote-bg: var(--color-blockquote-bg-light);
   --color-text-primary: var(--color-text-primary-light);
   --color-text-secondary: var(--color-text-primary-light);
 
   @media (prefers-color-scheme: dark) {
     --color-bg: var(--color-bg-dark);
+    --color-blockquote-bg: var(--color-blockquote-bg-dark);
     --color-text-primary: var(--color-text-primary-dark);
     --color-text-secondary: var(--color-text-secondary-dark);
   }
@@ -260,7 +265,7 @@ blockquote {
     border-left-style: solid;
     padding-right: .25em;
     padding-left: .5em;
-    background-color: #f9f9f9;
+    background-color: var(--color-blockquote-bg);
 
     @media (max-width:450px) {
         margin-left: 2px;
