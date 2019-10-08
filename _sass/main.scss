@@ -4,14 +4,32 @@ $font-stack-title: "Bodoni 72", "Bodoni MT", "Bodoni", $font-stack-headers;
 $font-stack-sans: sans-serif;
 
 :root{
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #212529;
+
   --color-primary-main: #F44336;
   --color-primary-light: #ff7961;
   --color-primary-dark: #ba000d;
+
   --color-secondary-main: #7C4DFF;
   --color-secondary-light: #b47cff;
   --color-secondary-dark: #3f1dcb;
-  --color-text-light: #ffffff;
-  --color-text-dark: #000000;
+
+  --color-text-secondary-light: #ffffff;
+  --color-text-primary-light: #000000;
+  --color-text-secondary-dark: #000000;
+  --color-text-primary-dark: #ffffff;
+
+  // light mode
+  --color-bg: var(--color-bg-light);
+  --color-text-primary: var(--color-text-primary-light);
+  --color-text-secondary: var(--color-text-primary-light);
+
+  @media (prefers-color-scheme: dark) {
+    --color-bg: var(--color-bg-dark);
+    --color-text-primary: var(--color-text-primary-dark);
+    --color-text-secondary: var(--color-text-secondary-dark);
+  }
 }
 
 /*
@@ -27,7 +45,8 @@ nav{
 body {
     /*font-size: 1.25em; */
     font-family: $font-stack;
-    color: var(--color-text-dark);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg);
     font-variant-numeric: oldstyle-nums proportional-nums;
     font-variant-ligatures: discretionary-ligatures;
 }
@@ -87,11 +106,11 @@ article {
             font-weight: 300;
             margin-bottom: .2em;
             a {
-                color: var(--color-text-dark);
+                color: var(--color-text-primary);
                 text-decoration: none;
             }
             a:visited {
-                color: var(--color-text-dark);
+                color: var(--color-text-primary);
             }
             a:hover {
                 color: var(--color-primary-light);
@@ -226,7 +245,7 @@ nav {
 
 ::selection {
     background: var(--color-secondary-dark);
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
 }
 
 ul,ol {
