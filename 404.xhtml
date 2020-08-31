@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!---
+first off, this document is simple enough to be almost certainly
+ineligible for copyright in most jurisdictions; however, if it for
+some reason is covered by copyright law, it is licensed thus:
+
+			DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+					Version 2, December 2004
+
+ Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+			DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	version="XHTML+RDFa 1.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.w3.org/1999/xhtml
+						http://www.w3.org/MarkUp/SCHEMA/xhtml-rdfa-2.xsd"
+	lang="en"
+	xml:lang="en">
+	<head>
+		<title>404 | File Not Found</title>
+		
+		<link rel="stylesheet" type="text/css"
+			href="https://danleonard.us/assets/css/default-style.css" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Dan Leonard" />
+		<link rel="me" href="https://danleonard.us/" />
+		
+		<!--# if expr="$status = 502" -->
+		<meta http-equiv="refresh" content="2">
+		<!--# endif -->
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-56093027-2"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			
+			gtag('config', 'UA-56093027-2');
+		</script>
+	</head>
+	<body vocab="http://schema.org/" typeof="WebPage">
+		<main>
+			<hgroup>
+				<h1 property="name">
+					Error <!--# echo var="status" default="" -->
+				</h1>
+				<!--# if expr="$status = 502" -->
+				<h2 property="comment">We are updating our website</h2>
+				<p>This is only for a few seconds, you will be redirected.</p>
+				<!--# else -->
+				<h2 property="comment">
+					<!--# echo var="status_text" default="Something goes wrong" -->
+				</h2>
+				<!--# endif -->
+			</hgroup>
+			<nav>
+				<ul>
+					<li>
+						<a property="significantLink" href="./blog/">
+							My homepage
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</main>
+	</body>
+</html>
